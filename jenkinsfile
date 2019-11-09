@@ -1,26 +1,23 @@
 pipeline {
-    agent any
-    stages {
-        stage ('compile stage'){
-        steps {
-            withMaven (maven : 'maven-3.6.1'){
-            sh 'mvn clean compile'
-        }
-        }
-        }
-        stage ('Testing stage'){
-        steps {
-            withMaven (maven: 'maven-3.6.1'){
-            sh 'mvn test'
-        }
-        }
-        }
-        stage ('Deployment stage')
-        steps {
-            withmaven (maven: 'maven-3.6.1')
-            sh 'mvn Deploy'
-        }
-        }
-        }
-    }
+agent any
+stages {
+stage ('build') {
+...
+}
+stage ('test: integration-&-quality') {
+...
+}
+stage ('test: functional') {
+...
+}
+stage ('test: load-&-security') {
+...
+}
+stage ('approval') {
+...
+}
+stage ('deploy:prod') {
+...
+}
+}
 }
