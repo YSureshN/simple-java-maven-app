@@ -3,22 +3,24 @@ agent any
 stages {
 stage ("compile stage") {
 steps {
-withmaven (maven: "maven_3_6_0") {
+withmaven (maven: "maven_3_6_1") {
 sh "mvn clean compile"
 }
 }
 ]
 stage (" testing stage") {
 steps {
-withmaven (maven: "maven_3_6_0" ) {
+withmaven (maven: "maven_3_6_1" ) {
 sh "mvn test"
 }
 }
 }
 stage (" deploy stage") {
 steps {
-withmaven (maven: "maven_3_6_0" ) {
+withmaven (maven: "maven_3_6_1" ) {
 sh "mvn deploy"
+}
+}
 }
 }
 }
