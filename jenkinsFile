@@ -1,12 +1,22 @@
 pipeline {
     agent any
     stages {
-stage('testing pipeline'){
-          steps{
-      echo 'test1'
-                sh 'mkdir from-jenkins'
-                sh 'touch from-jenkins/test.txt'
+        stage ("Build") {
+            steps {
+                parallel {
+                    "Build1": {
+                        sh 'echo %Name%'
+                    },
+                    "Build2": {
+                        sh 'echo Build2'
+                    }
                 }
+            }
         }
-}
+        stage ('Test') {
+            steps {
+                sh 'echo Test'
+            }
+        }
+    }
 }
