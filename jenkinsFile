@@ -1,22 +1,17 @@
 pipeline {
     agent any
     stages {
-        stage ("Build") {
-            steps {
-                parallel {
-                    "Build1": {
-                        sh 'echo %Name%'
-                    },
-                    "Build2": {
-                        sh 'echo Build2'
-                    }
-                }
-            }
-        }
-        stage ('Test') {
-            steps {
-                sh 'echo Test'
-            }
-        }
+        stage('run-parallel-branches') {
+  steps {
+    parallel(
+      a: {
+        echo "This is branch a"
+      },
+      b: {
+        echo "This is branch b"
+      }
+    )
+  }
+}
     }
 }
