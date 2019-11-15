@@ -9,27 +9,17 @@ pipeline {
                         label "label-1"
                     }
                     steps {
-                        sh "run-tests.bat"
+                        sh "echo windows"
                     }
-                    post {
-                        always {
-                            junit "**/TEST-*.xml"
-                        }
-                    }
-                }
+                   }
                 stage('Test On Linux') {
                     agent {
                         label "label-2"
                     }
                     steps {
-                        sh "run-tests.sh"
+                        sh "echo linux"
                     }
-                    post {
-                        always {
-                            junit "**/TEST-*.xml"
-                        }
-                    }
-                }
+                 }
             }
         }
     }
