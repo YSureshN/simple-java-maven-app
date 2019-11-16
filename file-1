@@ -33,4 +33,24 @@ ansible ALL=(ALL)       NOPASSWD: ALL
 Client Side
 --------
 useradd ansible
-passwd ansible.
+passwd ansiblvisudo
+------------
+## Allow root to run any commands anywhere
+root    ALL=(ALL)       ALL
+ansible ALL=(ALL)       NOPASSWD: ALL
+
+Server
+---------
+su - ansible
+ls -la
+ssh-keygen
+ls -la
+ssh-copy-id ansible@192.168.198.136
+
+ssh client-ip
+
+
+scp src-file root@ip:/path
+scp test.txt root@192.168.58.141:/opt
+scp -r test-dir root@192.168.58.141:/opt
+e.
