@@ -20,4 +20,17 @@ vi hosts
 [batch43]
 client-ip
 ..
-...
+..
+useradd ansible
+passwd ansible
+
+visudo
+------------
+## Allow root to run any commands anywhere
+root    ALL=(ALL)       ALL
+ansible ALL=(ALL)       NOPASSWD: ALL
+
+Client Side
+--------
+useradd ansible
+passwd ansible.
