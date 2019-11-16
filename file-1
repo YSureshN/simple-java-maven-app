@@ -53,4 +53,12 @@ ssh client-ip
 scp src-file root@ip:/path
 scp test.txt root@192.168.58.141:/opt
 scp -r test-dir root@192.168.58.141:/opt
-e.
+
+ansible all -m ping
+ansible ip -m ping
+ansible devops43 -m ping
+
+ansible all -a "cat /etc/passwd"
+
+ansible devops43 -a "cat /etc/passwd"
+ansible all -a "ls -l /opt"e.
