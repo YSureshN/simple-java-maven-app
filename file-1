@@ -61,4 +61,13 @@ ansible devops43 -m ping
 ansible all -a "cat /etc/passwd"
 
 ansible devops43 -a "cat /etc/passwd"
-ansible all -a "ls -l /opt"e.
+ansible all -a "ls -l /opt
+
+dasd
+das
+ad
+asdcas
+das
+d
+das
+d"e.
