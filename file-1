@@ -1,0 +1,23 @@
+Server
+--------
+yum install epel-release
+
+yum -config-manager --enable epel
+
+yum update
+
+yum install git python python-devel python-pip openssl ansible -y
+
+ansible --version
+cd /etc/ansible
+vi ansible.cfg
+------------------
+inventory      = /etc/ansible/hosts
+sudo_user      = root
+
+vi hosts
+----------
+[batch43]
+client-ip
+..
+...
