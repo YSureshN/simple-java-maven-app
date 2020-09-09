@@ -2,7 +2,7 @@
 pipeline {
     agent any
     tools {
-        maven 'maven-3.6.1' 
+        maven 'maven-3.6.3' 
     }
     stages {
     stage('Build') {
@@ -22,7 +22,7 @@ pipeline {
                    }
                 stage('Test On Linux') {
                     agent {
-                        label "label-2"
+                        label "label-1"
                     }
                     steps {
                         sh "echo linux"
